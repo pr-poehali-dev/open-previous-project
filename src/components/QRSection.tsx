@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/icon';
+import { useSettings } from '@/hooks/useSettings';
 
 const socials = [
   {
@@ -6,18 +7,27 @@ const socials = [
     url: 'https://vk.com/naolider',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/VK_Compact_Logo_%282021-present%29.svg',
     color: 'hsl(214,80%,56%)',
-    qr: 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://vk.com/naolider&bgcolor=111827&color=60B8D4',
+    data: 'https://vk.com/naolider',
   },
   {
     name: 'Макс',
     url: 'https://max.ru/id8300005685_gos',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/MAX_messenger_logo.svg/512px-MAX_messenger_logo.svg.png',
     color: 'hsl(180,55%,45%)',
-    qr: 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://max.ru/id8300005685_gos&bgcolor=111827&color=60B8D4',
+    data: 'https://max.ru/id8300005685_gos',
   },
 ];
 
+function getQrUrl(data: string, isDark: boolean) {
+  const bg = isDark ? '0d1f1f' : 'ffffff';
+  const fg = isDark ? '60D4C8' : '0d1f1f';
+  return `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(data)}&bgcolor=${bg}&color=${fg}`;
+}
+
 export default function QRSection() {
+  const { settings } = useSettings();
+  const isDark = settings.theme !== 'light';
+
   return (
     <section id="qr" className="py-28 px-6" style={{ background: 'hsl(var(--background))' }}>
       <div className="max-w-4xl mx-auto">
@@ -60,7 +70,7 @@ export default function QRSection() {
                 className="rounded-xl overflow-hidden p-3"
                 style={{ background: 'hsl(var(--secondary))' }}
               >
-                <img src={s.qr} alt={`QR ${s.name}`} className="w-40 h-40 rounded" />
+                <img src={getQrUrl(s.data, isDark)} alt={`QR ${s.name}`} className="w-40 h-40 rounded" />
               </div>
 
               <a
