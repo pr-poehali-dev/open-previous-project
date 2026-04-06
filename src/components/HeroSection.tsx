@@ -57,7 +57,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
         <h1 className="font-cormorant text-6xl md:text-8xl font-semibold leading-none mb-6" style={{ color: 'hsl(var(--foreground))' }}>
           ДЮЦ{' '}
           <span
-            className="italic"
+            className="italic px-1.5"
             style={{
               background: 'linear-gradient(135deg, hsl(180,45%,60%), hsl(245,80%,65%))',
               WebkitBackgroundClip: 'text',
