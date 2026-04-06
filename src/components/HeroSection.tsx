@@ -7,8 +7,6 @@ interface HeroSectionProps {
 
 const stats = [
   { value: '17+', label: 'Программ' },
-  { value: '500+', label: 'Учеников' },
-  { value: '20+', label: 'Тренеров' },
   { value: '30 лет', label: 'Работаем' },
 ];
 
@@ -98,7 +96,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 gap-6 max-w-xs mx-auto">
           {stats.map((stat) => (
             <div
               key={stat.label}
