@@ -169,6 +169,50 @@ const courses = [
     color: 'hsl(210,75%,55%)',
     tag: null,
   },
+  {
+    id: 16,
+    title: 'VR/AR-квантум',
+    category: 'Кванториум',
+    desc: 'Создание виртуальной и дополненной реальности на Unity. 3D-моделирование, анимация, разработка игр и приложений.',
+    age: '10–18 лет',
+    duration: 'Весь год',
+    icon: 'Glasses',
+    color: 'hsl(270,70%,60%)',
+    tag: null,
+  },
+  {
+    id: 17,
+    title: 'Data-квантум',
+    category: 'Кванториум',
+    desc: 'Основы компьютерной грамотности, кибербезопасность, анализ данных и исследования интернет-пространства.',
+    age: '10–18 лет',
+    duration: 'Весь год',
+    icon: 'Database',
+    color: 'hsl(195,70%,45%)',
+    tag: null,
+  },
+  {
+    id: 18,
+    title: 'Квантошахматы',
+    category: 'Кванториум',
+    desc: 'Шахматы как инструмент развития мышления, тактики и стратегии. Участие в соревнованиях, изучение партий мастеров.',
+    age: '7–18 лет',
+    duration: 'Весь год',
+    icon: 'Crown',
+    color: 'hsl(42,85%,52%)',
+    tag: null,
+  },
+  {
+    id: 19,
+    title: 'GameDev-квантум',
+    category: 'Кванториум',
+    desc: 'Разработка игр на C# и Unity, 3D-моделирование, создание игр для ПК и смартфонов, командные и индивидуальные проекты.',
+    age: '10–18 лет',
+    duration: 'Весь год',
+    icon: 'Gamepad2',
+    color: 'hsl(330,65%,55%)',
+    tag: null,
+  },
 ];
 
 export default function CoursesSection() {
@@ -206,7 +250,7 @@ export default function CoursesSection() {
             </span>
           </h2>
           <p className="text-lg max-w-xl mx-auto" style={{ color: 'hsl(var(--muted-foreground))' }}>
-            17 программ для детей и молодёжи от 5 до 18 лет
+            22 программы для детей и молодёжи от 5 до 18 лет
           </p>
         </div>
 
