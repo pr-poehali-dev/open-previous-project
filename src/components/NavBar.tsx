@@ -38,7 +38,7 @@ export default function NavBar({ activeSection, onNavigate }: NavBarProps) {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <button onClick={() => onNavigate('home')} className="flex items-center gap-2 group">
           <img
-            src="https://lidernao.ru/wp-content/uploads/2023/08/logo_vec.svg"
+            src="https://cdn.poehali.dev/projects/2f270b74-1b79-47e9-b474-9f2982efeaab/bucket/3faadd79-00d9-4d23-bb30-df1aa3a3f376.svg"
             alt="ДЮЦ Лидер"
             className="h-9 w-auto"
           />
