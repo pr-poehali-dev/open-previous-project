@@ -2,11 +2,10 @@ import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const contacts = [
-  { icon: 'Mail', label: 'Email', value: 'lidernao@mail.ru', color: 'hsl(245,80%,65%)', logo: null },
-  { icon: 'Phone', label: 'Телефон', value: '+7 (81853) 4-22-43', color: 'hsl(42,90%,58%)', logo: null },
-  { icon: 'MapPin', label: 'Адрес', value: '166000, НАО, г. Нарьян-Мар, ул. Выучейского, д. 30', color: 'hsl(320,70%,60%)', logo: null },
-  { icon: 'Globe', label: 'Сайт', value: 'lidernao.ru', color: 'hsl(180,55%,45%)', logo: null },
-
+  { icon: 'Mail', label: 'Email', value: 'lidernao@mail.ru', color: 'hsl(245,80%,65%)' },
+  { icon: 'Phone', label: 'Телефон', value: '+7 (81853) 4-22-43', color: 'hsl(42,90%,58%)' },
+  { icon: 'MapPin', label: 'Адрес', value: '166000, НАО, г. Нарьян-Мар, ул. Выучейского, д. 30', color: 'hsl(320,70%,60%)' },
+  { icon: 'Globe', label: 'Сайт', value: 'lidernao.ru', color: 'hsl(180,55%,45%)' },
 ];
 
 export default function ContactsSection() {
@@ -66,11 +65,7 @@ export default function ContactsSection() {
                   className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                   style={{ background: `${c.color}20` }}
                 >
-                  {c.logo ? (
-                    <img src={c.logo} alt={c.label} className="w-6 h-6 object-contain" />
-                  ) : (
-                    <Icon name={c.icon} fallback="Info" size={18} style={{ color: c.color }} />
-                  )}
+                  <Icon name={c.icon} fallback="Info" size={18} style={{ color: c.color }} />
                 </div>
                 <div>
                   <p className="text-xs mb-0.5" style={{ color: 'hsl(var(--muted-foreground))' }}>{c.label}</p>
