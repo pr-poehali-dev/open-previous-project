@@ -12,7 +12,7 @@ const socials = [
   {
     name: 'Макс',
     url: 'https://max.ru/id8300005685_gos',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/MAX_messenger_logo.svg/512px-MAX_messenger_logo.svg.png',
+    logo: 'https://cdn.poehali.dev/projects/2f270b74-1b79-47e9-b474-9f2982efeaab/bucket/3faadd79-00d9-4d23-bb30-df1aa3a3f376.svg',
     color: 'hsl(180,55%,45%)',
     data: 'https://max.ru/id8300005685_gos',
   },

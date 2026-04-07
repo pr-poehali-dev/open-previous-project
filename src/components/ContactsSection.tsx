@@ -6,7 +6,7 @@ const contacts = [
   { icon: 'Phone', label: 'Телефон', value: '+7 (81853) 4-22-43', color: 'hsl(42,90%,58%)', logo: null },
   { icon: 'MapPin', label: 'Адрес', value: '166000, НАО, г. Нарьян-Мар, ул. Выучейского, д. 30', color: 'hsl(320,70%,60%)', logo: null },
   { icon: 'Globe', label: 'Сайт', value: 'lidernao.ru', color: 'hsl(180,55%,45%)', logo: null },
-  { icon: 'MessageCircle', label: 'Макс', value: 'Написать в Макс', color: 'hsl(210,80%,55%)', logo: 'https://cdn.poehali.dev/projects/2f270b74-1b79-47e9-b474-9f2982efeaab/bucket/3faadd79-00d9-4d23-bb30-df1aa3a3f376.svg' },
+
 ];
 
 export default function ContactsSection() {
