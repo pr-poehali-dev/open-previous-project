@@ -6,7 +6,7 @@ export default function FooterSection() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <img
-            src="https://cdn.poehali.dev/projects/2f270b74-1b79-47e9-b474-9f2982efeaab/bucket/3faadd79-00d9-4d23-bb30-df1aa3a3f376.svg"
+            src="https://lidernao.ru/wp-content/uploads/2023/08/logo_vec.svg"
             alt="ДЮЦ Лидер"
             className="h-16 w-auto"
           />
