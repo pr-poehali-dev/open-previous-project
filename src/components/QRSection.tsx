@@ -4,16 +4,12 @@ import { useSettings } from '@/hooks/useSettings';
 const socials = [
   {
     name: 'ВКонтакте',
-    url: 'https://vk.com/naolider',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/VK_Compact_Logo_%282021-present%29.svg',
-    color: 'hsl(214,80%,56%)',
     data: 'https://vk.com/naolider',
   },
   {
     name: 'Макс',
-    url: 'https://max.ru/id8300005685_gos',
     logo: 'https://cdn.poehali.dev/projects/2f270b74-1b79-47e9-b474-9f2982efeaab/bucket/3faadd79-00d9-4d23-bb30-df1aa3a3f376.svg',
-    color: 'hsl(180,55%,45%)',
     data: 'https://max.ru/id8300005685_gos',
   },
 ];
@@ -50,7 +46,7 @@ export default function QRSection() {
             </span>
           </h2>
           <p className="text-lg max-w-xl mx-auto" style={{ color: 'hsl(var(--muted-foreground))' }}>
-            Наведите камеру на QR-код или нажмите кнопку для перехода
+            Наведите камеру на QR-код для перехода
           </p>
         </div>
 
@@ -73,15 +69,7 @@ export default function QRSection() {
                 <img src={getQrUrl(s.data, isDark)} alt={`QR ${s.name}`} className="w-40 h-40 rounded" />
               </div>
 
-              <a
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full text-center px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:scale-105"
-                style={{ background: s.color, color: '#fff' }}
-              >
-                Перейти в {s.name}
-              </a>
+
             </div>
           ))}
         </div>
