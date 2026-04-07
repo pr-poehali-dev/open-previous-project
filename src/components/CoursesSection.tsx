@@ -169,6 +169,28 @@ const courses = [
     color: 'hsl(210,75%,55%)',
     tag: null,
   },
+  {
+    id: 16,
+    title: 'Наноквантум',
+    category: 'Кванториум',
+    desc: 'Химия, физика и биология на наноуровне. Лабораторные эксперименты и научные исследования.',
+    age: '12–18 лет',
+    duration: 'Весь год',
+    icon: 'FlaskConical',
+    color: 'hsl(270,65%,60%)',
+    tag: null,
+  },
+  {
+    id: 17,
+    title: 'Геоквантум',
+    category: 'Кванториум',
+    desc: 'Геоинформационные технологии, картография, работа с данными и спутниковыми системами.',
+    age: '11–18 лет',
+    duration: 'Весь год',
+    icon: 'Globe',
+    color: 'hsl(100,55%,45%)',
+    tag: null,
+  },
 ];
 
 export default function CoursesSection() {
