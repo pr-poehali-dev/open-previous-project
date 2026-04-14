@@ -6,7 +6,7 @@ interface HeroSectionProps {
 }
 
 const stats = [
-  { value: '17+', label: 'Программ' },
+  { value: '70+', label: 'Программ' },
   { value: '25+ лет', label: 'Работаем' },
 ];
 
