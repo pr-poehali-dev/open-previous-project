@@ -7,14 +7,10 @@ import CoursesFilter from './courses/CoursesFilter';
 
 export default function CoursesSection() {
   const [activeCategory, setActiveCategory] = useState('Все');
-  const [search, setSearch] = useState('');
 
-  const filtered = courses.filter((c) => {
-    const matchCat = activeCategory === 'Все' || c.category === activeCategory;
-    const matchSearch = c.title.toLowerCase().includes(search.toLowerCase()) ||
-      c.desc.toLowerCase().includes(search.toLowerCase());
-    return matchCat && matchSearch;
-  });
+  const filtered = courses.filter((c) =>
+    activeCategory === 'Все' || c.category === activeCategory
+  );
 
   return (
     <section id="courses" className="py-28 px-6">
@@ -47,9 +43,7 @@ export default function CoursesSection() {
         <CoursesPricing />
 
         <CoursesFilter
-          search={search}
           activeCategory={activeCategory}
-          onSearchChange={setSearch}
           onCategoryChange={setActiveCategory}
         />
 

@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 const stats = [
   { value: '17+', label: 'Программ' },
-  { value: '30 лет', label: 'Работаем' },
+  { value: '25+ лет', label: 'Работаем' },
 ];
 
 export default function HeroSection({ onNavigate }: HeroSectionProps) {

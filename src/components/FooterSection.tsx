@@ -15,7 +15,7 @@ export default function FooterSection() {
           </span>
         </div>
         <p className="text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
-          © 2025 ДЮЦ ЛИДЕР. Все права защищены.
+          © 2026 ДЮЦ ЛИДЕР. Все права защищены.
         </p>
         <div className="flex items-center gap-5 text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
           <button className="hover:text-[hsl(var(--foreground))] transition-colors">Политика конфиденциальности</button>
