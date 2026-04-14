@@ -96,7 +96,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 max-w-xs mx-auto">
+        <div className="grid grid-cols-2 gap-6 max-w-xl mx-auto">
           {stats.map((stat) => (
             <div
               key={stat.label}
