@@ -62,26 +62,14 @@ export default function QRSection() {
           {socials.map((s) => {
             const qrUrl = getQrUrl(s.data, isDark, s.accent, s.accentLight);
             return (
-              <a
+              <div
                 key={s.name}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center w-full max-w-sm rounded-3xl border transition-all duration-300 overflow-hidden"
+                className="flex flex-col items-center w-full max-w-sm rounded-3xl border overflow-hidden"
                 style={{
                   borderColor: `#${s.accent}44`,
                   background: isDark
                     ? `linear-gradient(160deg, #${s.accent}18 0%, hsl(var(--card)) 50%)`
                     : `linear-gradient(160deg, #${s.accent}0f 0%, hsl(var(--card)) 50%)`,
-                  boxShadow: `0 0 0 0 #${s.accent}00`,
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 40px #${s.accent}33`;
-                  (e.currentTarget as HTMLElement).style.borderColor = `#${s.accent}88`;
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 0 #${s.accent}00`;
-                  (e.currentTarget as HTMLElement).style.borderColor = `#${s.accent}44`;
                 }}
               >
                 {/* Header */}
@@ -105,7 +93,7 @@ export default function QRSection() {
                 {/* QR */}
                 <div className="flex flex-col items-center gap-4 px-6 py-8">
                   <div
-                    className="rounded-2xl overflow-hidden p-2 transition-transform duration-300 group-hover:scale-105"
+                    className="rounded-2xl overflow-hidden p-2"
                     style={{
                       background: isDark ? '#111a1a' : '#ffffff',
                       boxShadow: `0 4px 24px #${s.accent}33`,
@@ -122,7 +110,7 @@ export default function QRSection() {
                     Наведите камеру телефона
                   </p>
                 </div>
-              </a>
+              </div>
             );
           })}
         </div>
