@@ -66,7 +66,7 @@ export default function QRSection() {
                 className="rounded-xl overflow-hidden p-3"
                 style={{ background: 'hsl(var(--secondary))' }}
               >
-                <img src={getQrUrl(s.data, isDark)} alt={`QR ${s.name}`} className="w-40 h-40 rounded" />
+                <img key={getQrUrl(s.data, isDark)} src={getQrUrl(s.data, isDark)} alt={`QR ${s.name}`} className="w-40 h-40 rounded" />
               </div>
 
 
