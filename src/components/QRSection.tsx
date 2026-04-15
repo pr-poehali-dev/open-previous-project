@@ -100,7 +100,7 @@ export default function QRSection() {
                     }}
                   >
                     <img
-                      key={qrUrl}
+                      key={`${isDark}-${qrUrl}`}
                       src={qrUrl}
                       alt={`QR ${s.name}`}
                       className="w-44 h-44 block"
