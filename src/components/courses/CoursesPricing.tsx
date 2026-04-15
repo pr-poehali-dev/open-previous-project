@@ -38,7 +38,7 @@ export default function CoursesPricing() {
           className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
           style={{ background: 'hsl(var(--gold) / 0.15)' }}
         >
-          <Icon name="BadgeDollarSign" size={20} style={{ color: 'hsl(var(--gold))' }} />
+          <Icon name="BadgeRussianRuble" size={20} style={{ color: 'hsl(var(--gold))' }} />
         </div>
         <div>
           <p className="font-semibold mb-1.5" style={{ color: 'hsl(var(--gold))' }}>Старше 18 лет — по прейскуранту</p>
