@@ -4,20 +4,28 @@ import { useSettings } from '@/hooks/useSettings';
 const socials = [
   {
     name: 'ВКонтакте',
+    handle: '@naolider',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/VK_Compact_Logo_%282021-present%29.svg',
     data: 'https://vk.com/naolider',
+    url: 'https://vk.com/naolider',
+    accent: '0077FF',
+    accentLight: '0060cc',
   },
   {
     name: 'Макс',
+    handle: '@lider_nao',
     logo: 'https://cdn.poehali.dev/projects/2f270b74-1b79-47e9-b474-9f2982efeaab/bucket/3faadd79-00d9-4d23-bb30-df1aa3a3f376.svg',
     data: 'https://max.ru/id8300005685_gos',
+    url: 'https://max.ru/id8300005685_gos',
+    accent: '6C3CE2',
+    accentLight: '5429c4',
   },
 ];
 
-function getQrUrl(data: string, isDark: boolean) {
-  const bg = isDark ? '0d1f1f' : 'ffffff';
-  const fg = isDark ? '60D4C8' : '0d1f1f';
-  return `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(data)}&bgcolor=${bg}&color=${fg}`;
+function getQrUrl(data: string, isDark: boolean, accentHex: string, accentLight: string) {
+  const bg = isDark ? '111a1a' : 'ffffff';
+  const fg = isDark ? accentHex : accentLight;
+  return `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(data)}&bgcolor=${bg}&color=${fg}&margin=10&qzone=1`;
 }
 
 export default function QRSection() {
@@ -50,28 +58,73 @@ export default function QRSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
-          {socials.map((s) => (
-            <div
-              key={s.name}
-              className="flex flex-col items-center gap-6 p-8 rounded-2xl border w-full max-w-sm"
-              style={{ borderColor: 'hsl(var(--border))', background: 'hsl(var(--card))' }}
-            >
-              <div className="flex flex-col items-center gap-2">
-                <img src={s.logo} alt={s.name} className="w-14 h-14 object-contain rounded-xl" />
-                <p className="font-semibold text-sm" style={{ color: 'hsl(var(--foreground))' }}>{s.name}</p>
-              </div>
-
-              <div
-                className="rounded-xl overflow-hidden p-3"
-                style={{ background: 'hsl(var(--secondary))' }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+          {socials.map((s) => {
+            const qrUrl = getQrUrl(s.data, isDark, s.accent, s.accentLight);
+            return (
+              <a
+                key={s.name}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center w-full max-w-sm rounded-3xl border transition-all duration-300 overflow-hidden"
+                style={{
+                  borderColor: `#${s.accent}44`,
+                  background: isDark
+                    ? `linear-gradient(160deg, #${s.accent}18 0%, hsl(var(--card)) 50%)`
+                    : `linear-gradient(160deg, #${s.accent}0f 0%, hsl(var(--card)) 50%)`,
+                  boxShadow: `0 0 0 0 #${s.accent}00`,
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 40px #${s.accent}33`;
+                  (e.currentTarget as HTMLElement).style.borderColor = `#${s.accent}88`;
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 0 #${s.accent}00`;
+                  (e.currentTarget as HTMLElement).style.borderColor = `#${s.accent}44`;
+                }}
               >
-                <img key={getQrUrl(s.data, isDark)} src={getQrUrl(s.data, isDark)} alt={`QR ${s.name}`} className="w-40 h-40 rounded" />
-              </div>
+                {/* Header */}
+                <div
+                  className="w-full flex items-center gap-3 px-6 py-4"
+                  style={{ borderBottom: `1px solid #${s.accent}22` }}
+                >
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: `#${s.accent}22` }}
+                  >
+                    <img src={s.logo} alt={s.name} className="w-6 h-6 object-contain" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-semibold text-sm" style={{ color: 'hsl(var(--foreground))' }}>{s.name}</span>
+                    <span className="text-xs" style={{ color: `#${s.accent}` }}>{s.handle}</span>
+                  </div>
+                  <Icon name="ExternalLink" size={14} className="ml-auto opacity-40 group-hover:opacity-80 transition-opacity" style={{ color: 'hsl(var(--foreground))' }} />
+                </div>
 
-
-            </div>
-          ))}
+                {/* QR */}
+                <div className="flex flex-col items-center gap-4 px-6 py-8">
+                  <div
+                    className="rounded-2xl overflow-hidden p-2 transition-transform duration-300 group-hover:scale-105"
+                    style={{
+                      background: isDark ? '#111a1a' : '#ffffff',
+                      boxShadow: `0 4px 24px #${s.accent}33`,
+                    }}
+                  >
+                    <img
+                      key={qrUrl}
+                      src={qrUrl}
+                      alt={`QR ${s.name}`}
+                      className="w-44 h-44 block"
+                    />
+                  </div>
+                  <p className="text-xs text-center" style={{ color: 'hsl(var(--muted-foreground))' }}>
+                    Наведите камеру телефона
+                  </p>
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
