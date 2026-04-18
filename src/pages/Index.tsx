@@ -9,20 +9,9 @@ import AccessibilityPanel from '@/components/AccessibilityPanel';
 
 const sectionIds = ['home', 'courses', 'qr', 'contacts'];
 const IDLE_TIMEOUT = 5 * 60 * 1000;
-const FULLSCREEN_DELAY = 60 * 1000;
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
-
-  useEffect(() => {
-    const fsTimer = setTimeout(() => {
-      const el = document.documentElement;
-      if (el.requestFullscreen && !document.fullscreenElement) {
-        el.requestFullscreen().catch(() => {});
-      }
-    }, FULLSCREEN_DELAY);
-    return () => clearTimeout(fsTimer);
-  }, []);
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
