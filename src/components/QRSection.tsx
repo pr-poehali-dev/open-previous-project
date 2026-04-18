@@ -20,6 +20,15 @@ const socials = [
     accent: '6C3CE2',
     accentLight: '5429c4',
   },
+  {
+    name: 'Кванториум',
+    handle: '@kvantorium83',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/VK_Compact_Logo_%282021-present%29.svg',
+    data: 'https://vk.com/kvantorium83',
+    url: 'https://vk.com/kvantorium83',
+    accent: '0077FF',
+    accentLight: '0060cc',
+  },
 ];
 
 function getQrUrl(data: string, isDark: boolean, accentHex: string, accentLight: string) {
@@ -34,7 +43,7 @@ export default function QRSection() {
 
   return (
     <section id="qr" className="py-28 px-6" style={{ background: 'hsl(var(--background))' }}>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="mb-16 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[hsl(var(--neon))]/30 bg-[hsl(var(--neon))]/10 text-xs font-medium text-neon mb-6">
             <Icon name="QrCode" size={12} />
@@ -58,7 +67,7 @@ export default function QRSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           {socials.map((s) => {
             const qrUrl = getQrUrl(s.data, isDark, s.accent, s.accentLight);
             return (
